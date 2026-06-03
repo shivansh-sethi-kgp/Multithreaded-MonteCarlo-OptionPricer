@@ -31,8 +31,46 @@ This project requires a C++17 compliant compiler and CMake (3.10+). It utilizes 
 
 ### Compilation via CMake
 
-   Clone the repository:
-   
+1. Clone the repository:
+
    ```bash
    git clone [https://github.com/YourUsername/YourRepositoryName.git](https://github.com/YourUsername/YourRepositoryName.git)
    cd YourRepositoryName
+
+2. Create a build directory and configure the project:
+
+   mkdir build
+   cd build
+   cmake ..
+
+3. Compile the executable:
+
+   cmake --build .
+
+4. Run the simulation:
+
+   ./pricer
+
+
+## Sample Output
+
+Below is an example execution calculating the price and Greeks for a standard at-the-money vanilla call option using 1,000,000 Monte Carlo paths distributed across available CPU cores:
+
+```text
+Enter the current stock price
+100
+Enter the strike price
+100
+Enter the current risk free rate
+0.05
+Enter the current volatility
+0.18
+Days to Maturity
+90
+Enter the option type (vanilla call, vanilla put, asian fixed strike call, asian fixed strike put, asian floating strike call, asian floating strike put)
+asian floating strike call
+
+Simulated option price : $2.3385
+Delta of the Option : 0.023385
+Gamma of the Option : 1.77636e-11
+Computation Time : 1.59206 seconds
